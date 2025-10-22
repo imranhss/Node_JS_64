@@ -16,6 +16,16 @@ app.use(bodyParser.json());
 const userRoutes = require('./routes/user');
 app.use('/api/users', userRoutes);
 
+app.use("/api/countries", require("./routes/countryRoutes"));
+
+
+app.use("/api/divisions", require("./routes/divisionRoutes"));
+
+
+app.use("/api/districts", require("./routes/districtRoutes"));
+app.use("/api/policestations", require("./routes/policeStationRoutes"));
+app.use("/api/address", require("./routes/addressRoutes"));
+
 
 
 
