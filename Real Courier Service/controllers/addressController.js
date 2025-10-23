@@ -24,7 +24,7 @@ exports.createAddress = (req, res) => {
     [address_line_1, address_line_2, country_id, division_id, district_id, police_station_id],
     (err, result) => {
       if (err) return res.status(500).json({ error: err.message });
-      res.json({ id: result.insertId });
+      res.json({ id: result.insertId, message:"Data Saved" });
     }
   );
 };

@@ -53,7 +53,7 @@ router.post('/save', upload.single('photo'), async (req, res) => {
     const photo = req.file ? `user/${req.file.filename}` : null;
 
     // ✅ Encrypt the password
-    const hashedPassword =await bcrypt.hash(password, 19);
+    const hashedPassword =await bcrypt.hash(password, 10);
 
     const sql = 'INSERT INTO user (name, email, password, phone, role, photo, activeStatus) VALUES (?, ?, ?, ?, ?, ?, ?)';
     db.query(sql, [name, email, hashedPassword, phone, userRole, photo, activeStatus_value], (err, result) => {
@@ -64,6 +64,7 @@ router.post('/save', upload.single('photo'), async (req, res) => {
     res.status(500).send({ message: 'Error saving user', error });
   }
 });
+
 
 
 
