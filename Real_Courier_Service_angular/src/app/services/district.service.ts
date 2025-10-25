@@ -25,11 +25,15 @@ export class DistrictService {
       return this.http.post<District>(this.apiUrl + "/api/districts/", district);
   
     }
+
+
   
     getDistrictByDivisionId(id: number): Observable<District[]> {
   
       return this.http.get<District[]>(this.apiUrl + "/api/districts/division/" + id);
   
     }
+
+    
   
 }

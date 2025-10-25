@@ -1,6 +1,6 @@
 export interface Address {
 
-    id: number;
+    id?: number;
     address_line_1: string;
     address_line_2: string;
 
@@ -8,6 +8,11 @@ export interface Address {
     district_id: number;
     division_id: number;
     police_station_id: number;
+
+    country?: string;
+    division?: string;
+    district?: string;
+    police_station?: string;
 
 
 }
